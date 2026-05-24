@@ -4,9 +4,7 @@ import { queryMany, queryOne, query } from '../../utils/db';
 import { sendSuccess, sendSuccessNoData, sendError } from '../../utils/response';
 import { validateCreateIssue, validateUpdateIssue } from '../../utils/validation';
 
-// ---------------------------------------------------------------------------
-// Row shapes
-// ---------------------------------------------------------------------------
+
 interface IssueRow {
   id: number;
   title: string;
@@ -28,10 +26,7 @@ interface IssueWithReporter extends Omit<IssueRow, 'reporter_id'> {
   reporter: ReporterRow;
 }
 
-// ---------------------------------------------------------------------------
-// Helper — fetch reporter details for one or many issues (no JOINs per spec)
-// Uses a single WHERE id IN (...) batch query to minimise round-trips.
-// ---------------------------------------------------------------------------
+
 async function attachReporters(issues: IssueRow[]): Promise<IssueWithReporter[]> {
   if (issues.length === 0) return [];
 
@@ -54,9 +49,7 @@ async function attachReporters(issues: IssueRow[]): Promise<IssueWithReporter[]>
   }));
 }
 
-// ---------------------------------------------------------------------------
 // POST /api/issues
-// ---------------------------------------------------------------------------
 export async function createIssue(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
     const body = req.body as Record<string, unknown>;
@@ -89,10 +82,8 @@ export async function createIssue(req: Request, res: Response, next: NextFunctio
   }
 }
 
-// ---------------------------------------------------------------------------
 // GET /api/issues
 // Supports: ?sort=newest|oldest  ?type=bug|feature_request  ?status=open|...
-// ---------------------------------------------------------------------------
 export async function getAllIssues(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
     const { sort = 'newest', type, status } = req.query as Record<string, string | undefined>;
@@ -129,9 +120,7 @@ export async function getAllIssues(req: Request, res: Response, next: NextFuncti
   }
 }
 
-// ---------------------------------------------------------------------------
 // GET /api/issues/:id
-// ---------------------------------------------------------------------------
 export async function getIssueById(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
     const { id } = req.params;
@@ -153,10 +142,8 @@ export async function getIssueById(req: Request, res: Response, next: NextFuncti
   }
 }
 
-// ---------------------------------------------------------------------------
 // PATCH /api/issues/:id
 // Access: Maintainer (any issue) OR Contributor (own issue, only if status is open)
-// ---------------------------------------------------------------------------
 export async function updateIssue(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
     const { id } = req.params;
@@ -238,9 +225,7 @@ export async function updateIssue(req: Request, res: Response, next: NextFunctio
   }
 }
 
-// ---------------------------------------------------------------------------
 // DELETE /api/issues/:id   — Maintainer only
-// ---------------------------------------------------------------------------
 export async function deleteIssue(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
     const { id } = req.params;
