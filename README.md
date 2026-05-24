@@ -1,9 +1,10 @@
-# DevPulse API
+# REST API built with Node.js, Express.js, TypeScript, PostgreSQL, and Raw SQL.
 
 A collaborative platform for software teams to report bugs, suggest features, and coordinate resolutions.
 
 **Live URL:** `https://node-express-project-ruddy.vercel.app`
 **GitHub:** `https://github.com/islamSorifulhero/Node-Express-Project`
+**Video:** `https://www.loom.com/share/448648419ed742fdaea3b4405ea86edd`
 
 ---
 
