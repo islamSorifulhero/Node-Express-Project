@@ -4,7 +4,7 @@ A collaborative platform for software teams to report bugs, suggest features, an
 
 **Live URL:** https://node-express-project-ruddy.vercel.app
 **GitHub:** https://github.com/islamSorifulhero/Node-Express-Project
-**Video:** https://www.loom.com/share/448648419ed742fdaea3b4405ea86edd
+**Video:** https://docs.google.com/document/d/1QKFsTDS5ReGpP4b46rwYZjUYvcvPhYNDhm9ejC9cbTI/edit?usp=sharing
 
 ---
 

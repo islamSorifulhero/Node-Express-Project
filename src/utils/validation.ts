@@ -1,7 +1,5 @@
-// ---------------------------------------------------------------------------
 // Lightweight validation helpers — avoids pulling in heavy libs while keeping
 // validation logic DRY and testable in isolation.
-// ---------------------------------------------------------------------------
 
 export interface ValidationError {
   field: string;

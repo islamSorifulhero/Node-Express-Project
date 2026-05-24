@@ -1,10 +1,8 @@
 import { QueryResult, QueryResultRow } from 'pg';
 import pool from '../config/database';
 
-// ---------------------------------------------------------------------------
 // Generic typed wrappers around pool.query() — avoids repeating try/catch
 // boilerplate in every module and keeps raw SQL as the only data access layer.
-// ---------------------------------------------------------------------------
 
 /**
  * Run a parameterised query and return the full QueryResult.

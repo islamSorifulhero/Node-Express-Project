@@ -1,8 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-// ---------------------------------------------------------------------------
 // Typed payload stored inside the JWT
-// ---------------------------------------------------------------------------
 export interface TokenPayload {
   id: number;
   name: string;

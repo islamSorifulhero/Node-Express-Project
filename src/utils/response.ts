@@ -1,9 +1,7 @@
 import { Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
-// ---------------------------------------------------------------------------
 // Typed response shapes
-// ---------------------------------------------------------------------------
 
 interface SuccessPayload<T> {
   success: true;
@@ -22,9 +20,7 @@ interface ErrorPayload {
   errors?: unknown;
 }
 
-// ---------------------------------------------------------------------------
 // Helpers — keep controllers concise and consistent
-// ---------------------------------------------------------------------------
 
 export function sendSuccess<T>(
   res: Response,
