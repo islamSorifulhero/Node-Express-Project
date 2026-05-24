@@ -6,9 +6,7 @@ import { sendSuccess, sendError } from '../../utils/response';
 import { signToken } from '../../utils/jwt';
 import { validateSignup, validateLogin } from '../../utils/validation';
 
-// ---------------------------------------------------------------------------
 // Row shapes returned from raw SQL queries
-// ---------------------------------------------------------------------------
 interface UserRow {
   id: number;
   name: string;
@@ -21,9 +19,7 @@ interface UserRow {
 
 const SALT_ROUNDS = parseInt(process.env.BCRYPT_SALT_ROUNDS ?? '10', 10);
 
-// ---------------------------------------------------------------------------
 // POST /api/auth/signup
-// ---------------------------------------------------------------------------
 export async function signup(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
     const body = req.body as Record<string, unknown>;
@@ -69,9 +65,7 @@ export async function signup(req: Request, res: Response, next: NextFunction): P
   }
 }
 
-// ---------------------------------------------------------------------------
 // POST /api/auth/login
-// ---------------------------------------------------------------------------
 export async function login(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
     const body = req.body as Record<string, unknown>;
