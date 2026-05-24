@@ -2,8 +2,8 @@
 
 A collaborative platform for software teams to report bugs, suggest features, and coordinate resolutions.
 
-**Live URL:** `https://devpulse-api.vercel.app` *(replace after deployment)*
-**GitHub:** `https://github.com/yourusername/devpulse`
+**Live URL:** `https://node-express-project-ruddy.vercel.app`
+**GitHub:** `https://github.com/islamSorifulhero/Node-Express-Project`
 
 ---
 
@@ -38,7 +38,7 @@ A collaborative platform for software teams to report bugs, suggest features, an
 ### 1. Clone & install
 
 ```bash
-git clone https://github.com/yourusername/devpulse.git
+git clone https://github.com/islamSorifulhero/Node-Express-Project
 cd devpulse
 npm install
 ```
